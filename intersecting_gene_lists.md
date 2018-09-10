@@ -29,3 +29,12 @@ Find list of genes that are differentially expressed. They are often in suppleme
 
 2. Identify a list of transcription factors that control aging-associated genes common to multiple datasets.
 
+
+# Convert mouse Rik names to human names
+
+`aging_test` is a dataframe of mouse gene expression data. `mouse2human` is a dataframe of mouse to human names converted by Biomart. `mergedname` is a composite data frame "joined" on the mouse names in each dataframe. The `by.x` and `by.y` are needed because the mouse gene names aren't the same in the two data frames.
+
+	mergedname <- merge(mouse2human,aging_test,by.x = "Mouse gene name", by.y="gene_name”)
+
+
+
