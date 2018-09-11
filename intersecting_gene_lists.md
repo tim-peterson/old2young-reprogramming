@@ -25,20 +25,14 @@ Find list of genes that are differentially expressed. They are often in suppleme
 
 	write.csv(gene_intersection, file = "/Users/timrpeterson/OneDrive - Washington University in St. Louis/Data/Aging/intersect_liver_kidney.csv")
 
-## To-do	
 
-1. Get gene homolog tables (from BioMart?) to convert non-mammalian species gene names to their mammalian homologs. This will enable us to leverage experiments done in worms, yeast, fish, etc.
-
-2. Identify a list of transcription factors that control aging-associated genes common to multiple datasets.
-
-
-# Convert mouse Rik names to human names
+## Convert mouse Rik names to human names
 
 `aging_test` is a dataframe of mouse gene expression data. `mouse2human` is a dataframe of mouse to human names converted by Biomart. `mergedname` is a composite data frame "joined" on the mouse names in each dataframe. The `by.x` and `by.y` are needed because the mouse gene names aren't the same in the two data frames.
 
 	mergedname <- merge(mouse2human,aging_test,by.x = "Mouse gene name", by.y="gene_name”)
 
-# Count occurrences of gene names across multiple lists
+## Count occurrences of gene names across multiple lists
 
 Remove duplicates `in data->remove duplicates` and make lowercase using `=LOWER() combined with fill down` in Excel.
 
@@ -56,3 +50,9 @@ Just checking to see if you've imported the data you want:
 
 	count_occurences <- table(unlist(hu_skel_musc)))
 
+
+## To-do	
+
+1. Get gene homolog tables (from BioMart) to convert non-mammalian species gene names to their mammalian homologs. This will enable us to leverage experiments done in worms, yeast, fish, etc.
+
+2. Identify a list of transcription factors that control aging-associated genes common to multiple datasets.
