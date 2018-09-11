@@ -46,7 +46,7 @@ Just checking to see if you've imported the data you want:
 	
 	View(hu_skel_musc) 
 
-`count_occurences` this will contain your gene counts across your columns.
+`count_occurences` will contain your gene counts across your columns.
 
 	count_occurences <- table(unlist(hu_skel_musc)))
 
