@@ -42,13 +42,14 @@ Find list of genes that are differentially expressed. They are often in suppleme
 
 Remove duplicates `in data->remove duplicates` and make lowercase using `=LOWER() combined with fill down` in Excel.
 
-Import data, e.g., as an Excel file
+Import data, e.g., as an Excel file.
 
 	library(readxl)
 
 	hu_skel_musc <- read_excel("~/OneDrive - Washington University in St. Louis/Data/Aging/Standardized/Up in young/hu_skel_musc.xlsx")
 
-Just checking to see if you've imported the data you want
+Just checking to see if you've imported the data you want:
+	
 	View(hu_skel_musc) 
 
 `count_occurences` this will contain your gene counts across your columns.
