@@ -11,6 +11,8 @@ Find list of genes that are differentially expressed. They are often in suppleme
 
 	aging_rat_kidney <- read_excel("~/Downloads/oncotarget-07-30037-s003.xls")
 
+
+
 ## Get intersection of multiple data frame columns (lists of genes)
 
 	gene_intersection <- Reduce(intersect, list(tolower(aging_mouse_liver$gene_name),tolower(aging_rat_kidney$X__1)))
@@ -36,5 +38,20 @@ Find list of genes that are differentially expressed. They are often in suppleme
 
 	mergedname <- merge(mouse2human,aging_test,by.x = "Mouse gene name", by.y="gene_name”)
 
+# Count occurrences of gene names across multiple lists
 
+Remove duplicates `in data->remove duplicates` and make lowercase using `=LOWER() combined with fill down` in Excel.
+
+Import data, e.g., as an Excel file
+
+	library(readxl)
+
+	hu_skel_musc <- read_excel("~/OneDrive - Washington University in St. Louis/Data/Aging/Standardized/Up in young/hu_skel_musc.xlsx")
+
+Just checking to see if you've imported the data you want
+	View(hu_skel_musc) 
+
+`count_occurences` this will contain your gene counts across your columns.
+
+	count_occurences <- table(unlist(hu_skel_musc)))
 
